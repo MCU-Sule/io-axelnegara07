@@ -1,0 +1,36 @@
+2072029 - Axel Shira Sapata Negara
+https://github.com/MCU-Sule/io-axelnegara07
+
+1. add file chooser implementation to save and load file
+2. add save and load 2 using java nio
+3. add error handling for this application
+   - list all error scenario that potentially happen ?
+-Jika membuka file yang bukan .txt maka diberi filter Text Document agar yg muncul yg berformat Text Document
+-Jika save file tapi tidak menuliskan .txt maka harus diberi filter .txt
+-Jika user close open / save file maka harus di if
+
+
+4. is it better to save data on plain text or json ? why ?
+-Json, karena jika menggunakan Firefox(atau yg lainnya tpi menggunakan extension) untuk membaca datanya lebih rapi.
+
+
+5. is there a better format to json to store data on plain text ?
+   name a couple of alternatives (min 2)
+-CSV karena CSV digunakan sebagai cara untuk mengkomunikasikan data antara aplikasi yang berbeda
+-xml karena menurut sumber di internet yg saya baca xml dan json 11-12
+
+6. is it better to save data on file instead of a dedicated database ?
+   is there a scenario where saving data on file be better ?
+-menurut saya kalau data atau program dibutuhkan untuk banyak orang maka lebih bagus di database, dan sebaliknya jika hanya untuk kita sendiri yg mengaksesnya maka lebih baik langsung disimpan.
+
+7. can you test if a specific file exist in a specified path with java ? bisa
+   how ? menggunakan method fileTest.exists() dan fileTest.isFile(
+
+8  can you test if a specific  directory exist in a specified path ? bisa
+   how ? menggunakan method dirTest.exists() dan dirTest.isDirectory()
+
+9. can you delete or move file using java ? how ? menggunakan Files.deleteIfExists(path) untuk delete dan menggunakan method Files.move(path, path) untuk move
+
+10. can you think of potentiall security problem when you allow java to freely
+   change file on your computer ? 
+how do we prevent that ? kemungkinan file yang diubah adalah file penting oleh karena itu, menggunakan method FileChannel.lock()
